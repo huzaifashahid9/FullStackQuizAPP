@@ -22,5 +22,5 @@ const authCheck = () =>{
     navLinks.classList.toggle('active');
   }  
 
-window.authCheck = authCheck 
 window.toggleMenu = toggleMenu
+window.authCheck = authCheck 
