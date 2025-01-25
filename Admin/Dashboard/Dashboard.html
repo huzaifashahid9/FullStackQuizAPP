@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body onload="authCheck()">
+
+    <!-- navbar start -->
+    <nav class="navbar">
+        <div class="logo">BrainBurst</div>
+        <ul class="nav-links">
+          <li><a href="./Dashboard.html">Home</a></li>
+          <li><a href="../createQuiz/quiz.html">Create Quiz</a></li>
+          <li><a href="../listing/listing.html">Listing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="search">
+          <input type="text" placeholder="Search..." />
+          <button>🔍</button>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </nav>
+
+
+    <!-- navbar end -->
+
+    <h1>Hello Admin</h1>
+</body>
+<script type="module" src="./dashboard.js"></script>
+</html>
