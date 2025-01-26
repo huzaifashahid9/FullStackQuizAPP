@@ -1,12 +1,16 @@
-/* General Styles */
+/* General Styles for Both Sections */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #f0f0f5; /* Light gray background */
   color: #333;
+  background: #f0f4f8;
 }
 
 /* Navbar Styles */
+.navbar-wrapper {
+  background-color: #f0f0f5; /* Light gray background */
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -19,7 +23,7 @@ body {
   z-index: 1000;
 }
 
-.logo {
+.navbar .logo {
   font-size: 1.8rem;
   font-weight: 700;
   color: #ffffff;
@@ -39,7 +43,6 @@ body {
 }
 
 .nav-links a {
-  font-size: 1rem;
   text-decoration: none;
   color: #ffffff;
   font-weight: 900;
@@ -143,8 +146,103 @@ body {
   }
 }
 
-@media (max-width: 480px) {
-  .nav-links a {
-    font-size: 0.9rem;
+/* Admin Container Styles */
+.admin-container-wrapper {
+  background: #f0f4f8; /* Light gray background */
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.admin-container {
+  width: 90%;
+  max-width: 600px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px 30px;
+}
+
+/* Header Section */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #0077ff;
+}
+
+header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Form Styles */
+.quiz-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0077ff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 4px rgba(0, 119, 255, 0.5);
+}
+
+/* Buttons */
+.btn {
+  background: #0077ff;
+  color: #fff;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #005bb5;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 15px 20px;
+  }
+
+  .btn {
+    width: 100%;
   }
 }
+

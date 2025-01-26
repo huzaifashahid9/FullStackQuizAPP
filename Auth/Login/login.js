@@ -18,12 +18,14 @@ const pass = document.querySelector("#inputPass");
 
 const authCheck = () =>{
   try {
-    const data = localStorage.getItem("Users")
+    const user = localStorage.getItem("Users")
+    const data  = JSON.parse(user)
+    console.log(data);
     if(data.type === "Admin"){
       window.location.replace("../../Admin/Dashboard/Dashboard.html");
     }else if(data.type === "user"){
       window.location.replace("../../User/Dashboard/dashboard.html")
-    }
+     }
   } catch (error) {
     console.log(error.message);
     //alert(error.code);
@@ -56,6 +58,10 @@ const loginHandle = async () => {
     }
 
     localStorage.setItem("Users",JSON.stringify(userData));
+
+    // const dataa = localStorage.getItem("Users")
+    // const user  = JSON.parse(dataa)
+    // console.log(user);
 
     alert("Account Login Successfully");
 
