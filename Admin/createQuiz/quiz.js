@@ -37,6 +37,22 @@ const quesArr = [];
 //   option3,
 //   option4,
 //   correctAnswer);
+const authCheck = () => {
+  try {
+    const user = localStorage.getItem("Users");
+    const data = JSON.parse(user);
+    console.log(data);
+    if (data === null) {
+      window.location.replace("../../index.html");
+    }
+    if (data.type === "user") {
+      window.location.replace("../../User/Dashboard/dashboard.html");
+    }
+  } catch (error) {
+    console.log(error.message);
+    //alert(error.code);
+  }
+};
 
 const createQuiz = async () => {
   try {
@@ -110,3 +126,4 @@ function toggleMenu() {
 window.toggleMenu = toggleMenu;
 window.createQuiz = createQuiz;
 window.addQuestion = addQuestion;
+window.authCheck = authCheck;

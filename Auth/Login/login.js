@@ -16,21 +16,21 @@ console.log(app);
 const email = document.querySelector("#inputEmail");
 const pass = document.querySelector("#inputPass");
 
-const authCheck = () =>{
+const authCheck = () => {
   try {
-    const user = localStorage.getItem("Users")
-    const data  = JSON.parse(user)
+    const user = localStorage.getItem("Users");
+    const data = JSON.parse(user);
     console.log(data);
-    if(data.type === "Admin"){
+    if (data.type === "Admin") {
       window.location.replace("../../Admin/Dashboard/Dashboard.html");
-    }else if(data.type === "user"){
-      window.location.replace("../../User/Dashboard/dashboard.html")
-     }
+    } else if (data.type === "user") {
+      window.location.replace("../../User/Dashboard/dashboard.html");
+    }
   } catch (error) {
     console.log(error.message);
     //alert(error.code);
   }
-}
+};
 
 const loginHandle = async () => {
   console.log("hello");
@@ -47,17 +47,16 @@ const loginHandle = async () => {
     console.log(response);
     const id = response.user.uid;
     console.log(id);
-    
-    const data  = await getDoc(doc(db, "myUsers", id));
+
+    const data = await getDoc(doc(db, "myUsers", id));
     console.log(data.data());
-    
-    
+
     const userData = {
       ...data.data(),
-      id
-    }
+      id,
+    };
 
-    localStorage.setItem("Users",JSON.stringify(userData));
+    localStorage.setItem("Users", JSON.stringify(userData));
 
     // const dataa = localStorage.getItem("Users")
     // const user  = JSON.parse(dataa)
@@ -65,25 +64,20 @@ const loginHandle = async () => {
 
     alert("Account Login Successfully");
 
-    if(data.data().type === "Admin"){
+    if (data.data().type === "Admin") {
       window.location.replace("../../Admin/Dashboard/Dashboard.html");
-    }else{
-      window.location.replace("../../User/Dashboard/dashboard.html")
+    } else {
+      window.location.replace("../../User/Dashboard/dashboard.html");
     }
-    
-    
+
     // const uid = localStorage.setItem("Uid", id);
     // const userData = await getDoc(doc(db, "myUsers", id));
     // console.log(userData.data());
-
   } catch (error) {
     console.log(error.message);
     alert(error.code);
   }
 };
 
-
-
-
-window.loginHandle = loginHandle
-window.authCheck = authCheck
+window.loginHandle = loginHandle;
+window.authCheck = authCheck;

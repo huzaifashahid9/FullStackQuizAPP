@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./dashboard.css" />
+    <link rel="stylesheet" href="./quizapp.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +17,7 @@
     <nav class="navbar">
       <div class="logo">BrainBurst</div>
       <ul class="nav-links">
-        <li><a href="./dashboard.html">Home</a></li>
+        <li><a href="../Dashboard/dashboard.html">Home</a></li>
         <li><a href="../quizes/quiz.html">Quizes</a></li>
         <li><a href="../score/score.html">LeaderBoard</a></li>
         <li><a href="#">Contact</a></li>
@@ -31,7 +31,24 @@
 
     <!-- navbar end -->
 
-    <h1>Hello Dashboard</h1>
+    <h1>Hello Start quiz</h1>
+
+    <div class="quiz-container">
+      <div class="header">
+        <h1 id="quest-ele"></h1>
+      </div>
+
+      <div class="body">
+        <ul id="option-ele"></ul>
+      </div>
+
+      <div class="footer">
+        <p id="count"></p>
+        <button class="btn" id="nextBtn" onclick="nextQue()">Next</button>
+      </div>
+    </div>
+
+    <div id="resultcontainer"></div>
   </body>
-  <script type="module" src="./dashboard.js"></script>
+  <script type="module" src="./quizapp.js"></script>
 </html>

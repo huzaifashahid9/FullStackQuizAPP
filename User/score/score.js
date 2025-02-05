@@ -1,3 +1,8 @@
+function toggleMenu() {
+  const navLinks = document.querySelector(".nav-links");
+  navLinks.classList.toggle("active");
+}
+
 const authCheck = () => {
   try {
     const user = localStorage.getItem("Users");
@@ -6,8 +11,8 @@ const authCheck = () => {
     if (data === null) {
       window.location.replace("../../index.html");
     }
-    if (data.type === "user") {
-      window.location.replace("../../User/Dashboard/dashboard.html");
+    if (data.type === "Admin") {
+      window.location.replace("../../Admin/Dashboard/Dashboard.html");
     }
   } catch (error) {
     console.log(error.message);
@@ -15,10 +20,5 @@ const authCheck = () => {
   }
 };
 
-function toggleMenu() {
-  const navLinks = document.querySelector(".nav-links");
-  navLinks.classList.toggle("active");
-}
-
-window.toggleMenu = toggleMenu;
 window.authCheck = authCheck;
+window.toggleMenu = toggleMenu;

@@ -1,146 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./quiz.css">
+    <link rel="stylesheet" href="./quiz.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-</head>
-<body>
-
+  </head>
+  <body onload="authCheck()">
     <div class="navbar-wrapper">
       <nav class="navbar">
-      <div class="logo">BrainBurst</div>
-      <ul class="nav-links">
-        <li><a href="../Dashboard/Dashboard.html">Home</a></li>
-        <li><a href="./quiz.html">Create Quiz</a></li>
-        <li><a href="../listing/listing.html">Listing</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <div class="search">
-        <input type="text" placeholder="Search..." />
-        <button>🔍</button>
-      </div>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    </nav>
+        <div class="logo">BrainBurst</div>
+        <ul class="nav-links">
+          <li><a href="../Dashboard/Dashboard.html">Home</a></li>
+          <li><a href="./quiz.html">Create Quiz</a></li>
+          <li><a href="../listing/listing.html">Listing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="search">
+          <input type="text" placeholder="Search..." />
+          <button>🔍</button>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </nav>
     </div>
 
+    <!-- navbar end -->
 
-  <!-- navbar end -->
+    <div class="admin-container-wrapper">
+      <div class="admin-container">
+        <!-- Welcome Header -->
+        <header>
+          <h1>Welcome, Admin!</h1>
+          <p>Create a quiz to challenge your users. 🚀</p>
+        </header>
 
+        <!-- Quiz Creation Form -->
+        <div class="quiz-form">
+          <h2>Create Quiz</h2>
 
-  <div class="admin-container-wrapper">
-    <div class="admin-container">
-      <!-- Welcome Header -->
-      <header>
-        <h1>Welcome, Admin!</h1>
-        <p>Create a quiz to challenge your users. 🚀</p>
-      </header>
-  
-      <!-- Quiz Creation Form -->
-      <div class="quiz-form">
-        <h2>Create Quiz</h2>
-  
-        <!-- Quiz Title -->
-        <div class="form-group">
-          <label for="quizTitle">Quiz Title : </label>
-          <input
-            type="text"
-            id="quizTitle"
-            name="quizTitle"
-            placeholder="Enter Quiz Title"
-            required
-          />
-        </div>
-  
-        <!-- Quiz Category -->
-        <div class="form-group">
-          <label for="quizCategory">Category : </label>
-          <input
-            type="text"
-            id="quizCategory"
-            name="quizCategory"
-            placeholder="Enter Quiz Category"
-            required
-          />
-        </div>
-  
-        <!-- Question Section -->
-        <div class="form-group">
-          <h3>Add Questions</h3>
-  
-          <!-- Question Text -->
-          <label for="questionText">Question Text :</label>
-          <input
-            type="text"
-            id="questionText"
-            name="questionText"
-            placeholder="Enter Question Text"
-            required
-          />
-  
-          <!-- Options -->
-          <div class="options">
-            <label for="option1">Option 1 :</label>
+          <!-- Quiz Title -->
+          <div class="form-group">
+            <label for="quizTitle">Quiz Title : </label>
             <input
               type="text"
-              id="option1"
-              name="option1"
-              placeholder="Option 1"
-              required
-            />
-            <label for="option2">Option 2 :</label>
-            <input
-              type="text"
-              id="option2"
-              name="option2"
-              placeholder="Option 2"
-              required
-            />
-            <label for="option3">Option 3 :</label>
-            <input
-              type="text"
-              id="option3"
-              name="option3"
-              placeholder="Option 3"
-              required
-            />
-            <label for="option4">Option 4 :</label>
-            <input
-              type="text"
-              id="option4"
-              name="option4"
-              placeholder="Option 4"
+              id="quizTitle"
+              name="quizTitle"
+              placeholder="Enter Quiz Title"
               required
             />
           </div>
-  
-          <!-- Correct Answer -->
-          <label for="correctAnswer">Correct Answer :</label>
-          <input
-            type="text"
-            id="correctAnswer"
-            name="correctAnswer"
-            placeholder="Enter Correct Answer"
-            required
-          />
-          <button class="btn" onclick="addQuestion()">Add Question</button>
+
+          <!-- Quiz Category -->
+          <div class="form-group">
+            <label for="quizCategory">Category : </label>
+            <input
+              type="text"
+              id="quizCategory"
+              name="quizCategory"
+              placeholder="Enter Quiz Category"
+              required
+            />
+          </div>
+
+          <!-- Question Section -->
+          <div class="form-group">
+            <h3>Add Questions</h3>
+
+            <!-- Question Text -->
+            <label for="questionText">Question Text :</label>
+            <input
+              type="text"
+              id="questionText"
+              name="questionText"
+              placeholder="Enter Question Text"
+              required
+            />
+
+            <!-- Options -->
+            <div class="options">
+              <label for="option1">Option 1 :</label>
+              <input
+                type="text"
+                id="option1"
+                name="option1"
+                placeholder="Option 1"
+                required
+              />
+              <label for="option2">Option 2 :</label>
+              <input
+                type="text"
+                id="option2"
+                name="option2"
+                placeholder="Option 2"
+                required
+              />
+              <label for="option3">Option 3 :</label>
+              <input
+                type="text"
+                id="option3"
+                name="option3"
+                placeholder="Option 3"
+                required
+              />
+              <label for="option4">Option 4 :</label>
+              <input
+                type="text"
+                id="option4"
+                name="option4"
+                placeholder="Option 4"
+                required
+              />
+            </div>
+
+            <!-- Correct Answer -->
+            <label for="correctAnswer">Correct Answer :</label>
+            <input
+              type="text"
+              id="correctAnswer"
+              name="correctAnswer"
+              placeholder="Enter Correct Answer"
+              required
+            />
+            <button class="btn" onclick="addQuestion()">Add Question</button>
+          </div>
+
+          <!-- Create Quiz Button -->
+          <button class="btn submit-btn" onclick="createQuiz()">
+            Create Quiz
+          </button>
         </div>
-  
-        <!-- Create Quiz Button -->
-        <button class="btn submit-btn" onclick="createQuiz()">Create Quiz</button>
       </div>
     </div>
-  </div>
-  
-
-    
-</body>
-<script type="module" src="./quiz.js"></script>
+  </body>
+  <script type="module" src="./quiz.js"></script>
 </html>
