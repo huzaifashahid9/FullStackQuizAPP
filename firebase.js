@@ -19,6 +19,8 @@ import {
   doc,
   getDoc,
   getDocs,
+  query, 
+  where
 } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
 
 // Your web app's Firebase configuration
@@ -56,4 +58,6 @@ export {
   getDocs,
   updateDoc,
   deleteDoc,
+  query,
+  where
 };

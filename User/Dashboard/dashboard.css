@@ -152,3 +152,100 @@ body {
     font-size: 0.9rem;
   }
 }
+
+
+
+
+
+
+
+
+
+/* General Styles */
+profileBody {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f7fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 100px;
+}
+
+/* Profile Container */
+.profile-container {
+  text-align: center;
+  width: 100%;
+  margin: 40px auto;
+  max-width: 400px;
+}
+
+/* Profile Card */
+.profile-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Profile Header */
+.profile-header {
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #0077ff;
+}
+
+h2 {
+  margin: 10px 0 5px;
+  font-size: 22px;
+  color: #0077ff;
+}
+
+.user-email {
+  color: #555;
+  font-size: 14px;
+}
+
+/* Profile Details */
+.profile-details p {
+  background: #eef2ff;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+/* Motivational Quote */
+.motivational-quote {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+  font-style: italic;
+  background: #d1ecf1;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .profile-card {
+      padding: 15px;
+  }
+  .profile-pic {
+      width: 100px;
+      height: 100px;
+  }
+  h2 {
+      font-size: 20px;
+  }
+  .profile-details p {
+      font-size: 14px;
+  }
+}
+

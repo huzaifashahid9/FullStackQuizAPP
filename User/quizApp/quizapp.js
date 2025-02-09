@@ -5,6 +5,7 @@ import {
   doc,
   collection,
   updateDoc,
+  addDoc,
 } from "../../firebase.js";
 
 function toggleMenu() {
@@ -107,7 +108,7 @@ const nextQue = () => {
       }
     } else {
       console.log("Submit");
-      //submitQuiz();
+      submitQuiz();
     }
   } catch (error) {
     console.error("Error moving to next question:", error);
@@ -126,7 +127,7 @@ const checking = (ele) => {
       wrong++;
 
       for (i = 0; i < allEle.length; i++) {
-        if (allEle[i].innerHTML == correctAns) {
+        if (allEle[i].innerHTML === correctAns) {
           allEle[i].style.border = "3px solid green";
         }
       }
@@ -144,6 +145,65 @@ const checking = (ele) => {
   }
 };
 
+const submitQuiz = async () => {
+  try {
+    console.log(questions.length);
+    console.log(score);
+    console.log(wrong);
+    const user = localStorage.getItem("Users");
+    const data = JSON.parse(user);
+    console.log(data);
+    
+    const scoreObj = {
+      totalQues: questions.length,
+      score: score,
+      wrongAns: wrong,
+      quizId: sessionStorage.getItem("quizId"),
+      userId: data.id,
+      userName: data.Name,
+      quizTitle: quizTitle
+    };
+    
+    console.log("scoreObj", scoreObj);
+
+    const response = await addDoc(collection(db, "Scores"), scoreObj);
+    console.log(response);
+    alert("Quiz submitted successfully");
+
+    // Hiding quiz container
+    document.querySelector(".quiz-container").style.display = "none";
+    
+    // Showing result container
+    document.querySelector(".result-box").style.display = "block";
+
+    // Setting result values
+    document.getElementById("quizName").innerText = quizTitle;
+    document.getElementById("totalQues").innerText = questions.length;
+    document.getElementById("correctAns").innerText = score;
+    document.getElementById("wrongAns").innerText = wrong;
+
+    let percentage = (score / questions.length) * 100;
+    document.getElementById("percentage").innerText = percentage.toFixed(2);
+
+    let message = document.getElementById("message");
+
+    if (percentage >= 80) {
+        message.innerText = "Excellent! You are a quiz master! 🔥";
+        message.classList.add("success");
+    } else if (percentage >= 50) {
+        message.innerText = "Good Job! Keep improving! 💪";
+        message.classList.add("average");
+    } else {
+        message.innerText = "Don't Give Up! Try Again! 🚀";
+        message.classList.add("fail");
+    }
+    
+  } catch (error) {
+    console.log("error", error);
+  }
+};
+
+window.submitQuiz = submitQuiz;
 window.checking = checking;
 window.nextQue = nextQue;
 window.toggleMenu = toggleMenu;

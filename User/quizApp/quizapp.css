@@ -223,7 +223,7 @@ body {
   color: #333;
 }
 
-#resultcontainer {
+/* #resultcontainer {
   margin-top: 20px;
   padding: 20px;
   border: 2px solid #4caf50;
@@ -239,4 +239,74 @@ body {
   margin: 10px 0;
   font-size: 1.5rem;
   color: #4caf50;
+} */
+
+
+
+
+/* Result Box */
+.result-box {
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 50px auto;
 }
+
+.result-box h2 {
+  color: #0077ff;
+  margin-bottom: 15px;
+}
+
+.result-box p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.message-box {
+  background: #f0f0f5;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Score Message */
+.success { color: green; }
+.average { color: orange; }
+.fail { color: red; }
+
+/* Button */
+.btn {
+  background: #0077ff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background: #005bb5;
+}
+
+
+.message-box {
+  background: #f0f0f5;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Score Message */
+.success { color: green; }
+.average { color: orange; }
+.fail { color: red; }
+

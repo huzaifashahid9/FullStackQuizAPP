@@ -20,7 +20,7 @@
         <li><a href="../Dashboard/dashboard.html">Home</a></li>
         <li><a href="../quizes/quiz.html">Quizes</a></li>
         <li><a href="./score.html">LeaderBoard</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="../Contact/contact.html">Contact</a></li>
       </ul>
       <div class="search">
         <input type="text" placeholder="Search..." />
@@ -30,8 +30,32 @@
     </nav>
 
     <!-- navbar end -->
+     <div class="score">
+    <div class="leaderboard-container">
+      <h1>🏆 Quiz Leaderboard</h1>
+      
+      <!-- Motivational Quote -->
+      <div class="quote-box">
+          <p id="quote-text">"Loading motivation... 🔥"</p>
+      </div>
 
-    <h1>Hello Score</h1>
+      <table>
+          <thead>
+              <tr>
+                  <th>Rank</th>
+                  <th>Name</th>
+                  <th>Quiz Name</th>
+                  <th>Score</th>
+                  <th>Correct Answers</th>
+                  <th>Percentage</th>
+              </tr>
+          </thead>
+          <tbody id="leaderboard-body">
+              <!-- Data will be injected here dynamically -->
+          </tbody>
+      </table>
+  </div>
+</div>
   </body>
-  <script type="module" src="./quiz.js"></script>
+  <script type="module" src="./score.js"></script>
 </html>

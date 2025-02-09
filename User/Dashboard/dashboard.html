@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
   </head>
-  <body onload="authCheck()">
+  <body onload="authCheck() ; displayUserProfile()">
     <!-- navbar start -->
     <nav class="navbar">
       <div class="logo">BrainBurst</div>
@@ -20,7 +20,7 @@
         <li><a href="./dashboard.html">Home</a></li>
         <li><a href="../quizes/quiz.html">Quizes</a></li>
         <li><a href="../score/score.html">LeaderBoard</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="../Contact/contact.html">Contact</a></li>
       </ul>
       <div class="search">
         <input type="text" placeholder="Search..." />
@@ -30,8 +30,27 @@
     </nav>
 
     <!-- navbar end -->
+     <div class="profileBody">
+    <div class="profile-container">
+      <div class="profile-card">
+          <div class="profile-header">
+              <img src="https://via.placeholder.com/120" alt="User Profile" class="profile-pic">
+              <h2 id="user-name">User Name</h2>
+              <p class="user-email" id="user-email">user@example.com</p>
+          </div>
+          <div class="profile-details">
+              <p><strong>Father's Name:</strong> <span id="father-name"></span></p>
+              <p><strong>Age:</strong> <span id="user-age"></span></p>
+              <p><strong>Date of Birth:</strong> <span id="user-dob"></span></p>
+          </div>
+      </div>
 
-    <h1>Hello Dashboard</h1>
+      <div class="motivational-quote">
+          <p>✨ "Success is not final, failure is not fatal: it is the courage to continue that counts." ✨</p>
+      </div>
+  </div>
+</div>
+
   </body>
   <script type="module" src="./dashboard.js"></script>
 </html>

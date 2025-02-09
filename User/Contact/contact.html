@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./contact.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body onload="authCheck()">
+    <!-- navbar start -->
+    <nav class="navbar">
+      <div class="logo">BrainBurst</div>
+      <ul class="nav-links">
+        <li><a href="../Dashboard/dashboard.html">Home</a></li>
+        <li><a href="../quizes/quiz.html">Quizes</a></li>
+        <li><a href="../score/score.html">LeaderBoard</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+      <div class="search">
+        <input type="text" placeholder="Search..." />
+        <button>🔍</button>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- navbar end -->
+
+    <div  class="feedback-body">
+    <div class="feedback-container">
+        <h2>Give Your Feedback</h2>
+        <p>Your feedback helps us improve! Let us know what you think.</p>
+        
+        <div id="feedbackForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Feedback</label>
+                <textarea id="message" placeholder="Write your feedback here..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" onclick="sumbitting()">Submit</button>
+        </div>
+
+        <p class="thank-you-message" id="thankYouMsg" style="display: none;">
+            🎉 Thank you for your feedback! We appreciate your time.
+        </p>
+    </div>
+
+</div>
+
+  </body>
+  <script type="module" src="./contact.js"></script>
+</html>
