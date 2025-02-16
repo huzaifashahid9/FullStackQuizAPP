@@ -9,6 +9,12 @@ import {
   db,
 } from "../../firebase.js";
 
+console.log(supabase);
+const supabaseClient = supabase.createClient(
+  "https://wdbhldlsgfubhkzzylqg.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndkYmhsZGxzZ2Z1Ymhrenp5bHFnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk2OTEwNjMsImV4cCI6MjA1NTI2NzA2M30.skGWV9Qe0u-ug45GwIxkaGLnyZBVwHU4cg5eTOuXxLY"
+);
+
 // console.log(app,doc,createUserWithEmailAndPassword,signInWithEmailAndPassword,setDoc,getFirestore,getDoc,auth,db);
 
 const email = document.querySelector("#inputEmail");
@@ -17,6 +23,7 @@ const name = document.querySelector("#name");
 const age = document.querySelector("#age");
 const Fname = document.querySelector("#Fname");
 const date = document.querySelector("#date");
+const picture = document.querySelector("#picture");
 
 // console.log(email,pass,age,name);
 
@@ -62,6 +69,20 @@ const creating = async () => {
     const id = response.user.uid;
     console.log(id);
 
+    const file = picture.files[0];
+    console.log(file);
+    const { data, error } = await supabaseClient.storage
+      .from("profilepics")
+      .upload(file.name + new Date().getMilliseconds(), file);
+    console.log("data", data);
+    console.log("error", error);
+
+    const { data: url } = supabaseClient.storage
+      .from("profilepics")
+      .getPublicUrl(data.path);
+
+    console.log("URL", url);
+
     await setDoc(doc(db, "myUsers", id), {
       Name: name.value,
       age: age.value,
@@ -69,6 +90,7 @@ const creating = async () => {
       pass: pass.value,
       fName: Fname.value,
       date: date.value,
+      picUrl : url,
       type: "user", // user/admin
       isBlock: false,
       isDeleted: false,

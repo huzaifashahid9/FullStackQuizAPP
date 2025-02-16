@@ -20,12 +20,23 @@ function toggleMenu() {
   navLinks.classList.toggle("active");
 }
 
-
+const logout = () =>{
+  try {
+    localStorage.removeItem("Users")
+    alert("Account Logout Successfully")
+    window.location.reload();
+  } catch (error) {
+    console.log(error.message);
+  }
+}
 
 const displayUserProfile = () => {
   const user = localStorage.getItem("Users");
   if (user) {
       const data = JSON.parse(user);
+      console.log(data.picUrl.publicUrl);
+      
+      document.querySelector(".profile-pic").src = data.picUrl.publicUrl;  
       document.getElementById("user-name").innerText = data.Name;
       document.getElementById("father-name").innerText = data.fName ;
       document.getElementById("user-age").innerText = data.age ;
@@ -40,3 +51,4 @@ const displayUserProfile = () => {
 window.toggleMenu = toggleMenu;
 window.authCheck = authCheck;
 window.displayUserProfile = displayUserProfile
+window.logout = logout

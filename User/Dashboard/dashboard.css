@@ -249,3 +249,17 @@ h2 {
   }
 }
 
+
+.logout-but{
+  background-color: rgb(219, 54, 54);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-but:hover{
+  background-color: red;
+}
+

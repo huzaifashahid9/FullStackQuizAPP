@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./dashboard.css" />
+    <link rel="stylesheet" href="./feedback.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,15 +12,15 @@
       rel="stylesheet"
     />
   </head>
-  <body onload="authCheck()">
+  <body onload="authCheck() ; allfeed()">
     <!-- navbar start -->
     <nav class="navbar">
       <div class="logo">BrainBurst</div>
       <ul class="nav-links">
-        <li><a href="./Dashboard.html">Home</a></li>
+        <li><a href="../Dashboard/Dashboard.html">Home</a></li>
         <li><a href="../createQuiz/quiz.html">Create Quiz</a></li>
         <li><a href="../listing/listing.html">Listing</a></li>
-        <li><a href="../feedbacks/feedback.html">Feedbacks</a></li>
+        <li><a href="./feedback.html">Feedbacks</a></li>
       </ul>
       <div class="search">
         <input type="text" placeholder="Search..." />
@@ -31,7 +31,13 @@
 
     <!-- navbar end -->
 
-    <h1>Hello Admin</h1>
+    <h1>Hello Feedbacks</h1>
+
+    <div class="parent">
+      
+    </div>
+    
+    </div>
   </body>
-  <script type="module" src="./dashboard.js"></script>
+  <script type="module" src="./feedback.js"></script>
 </html>
